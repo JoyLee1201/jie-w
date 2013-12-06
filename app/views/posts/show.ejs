@@ -1,0 +1,27 @@
+<ul class="breadcrumb">
+    <li><%= post.title %></li>
+</ul>
+
+<ul class="breadcrumb2">
+    <li>
+	<%= post.description %>
+    <!-- <%- link_to('Delete', pathTo.post(post), {class: 'btn btn-danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'}) %> -->
+	</li>
+</ul>
+<% if(post.content){ %>
+	<ul class="breadcrumb">
+		<li><%= post.content %></li>
+	</ul>
+	<%- link_to('Edit Answer', pathTo.edit_post(post)) %>
+<% } else { %>
+
+<% var form = formFor(post, {action: pathTo.post(post), method: 'PUT', id: "post-form", class: "breadcrumb"}) %>
+<%- form.begin() %>
+<%- include _create_answer %>
+<div class="form-actions">
+    <%- form.submit('Create Answer', {class: 'btn btn-primary'}) %>
+</div>
+<%- form.end() %>
+
+
+<% } %>

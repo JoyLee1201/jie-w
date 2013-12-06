@@ -1,0 +1,8 @@
+
+<% var form = formFor(post, {action: pathTo.posts(), method: 'POST', id: "post-form", class: 'form-horizontal'}) %>
+<%- form.begin() %>
+<%- include _form %>
+<div class="form-actions">
+    <%- form.submit('Create Question', {class: 'btn btn-primary'}) %>
+</div>
+<%- form.end() %>

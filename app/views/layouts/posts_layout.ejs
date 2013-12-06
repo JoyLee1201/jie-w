@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %></title>
+        <%- stylesheetLinkTag('bootstrap', 'application', 'bootstrap-responsive', 'index','font-awesome') %>
+        <%- javascriptIncludeTag('http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', 'bootstrap', 'rails', 'application', 'bootstrap-wysiwyg', 'jquery.hotkeys') %>
+        <%- csrfMetaTag() %>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/">精准问答</a>
+					<div class="span2">
+						<% var form = formFor(query, {action: '/posts/search', method: 'POST', id: "global_search_form", class: 'navbar-search'}) %>
+						<%- form.begin() %>
+							<div class="input-append">
+								<%- form.input("q", {id:'aw-search-query',  placeholder:'发问前回车搜索问题', class:'search-query'}) %>							
+							</div>
+						<%- form.end() %>
+					</div>
+					<span class="pull-right">
+						<%- link_to('Ask', pathTo.new_post()) %> &nbsp;
+						<a href="/posts/tags"  >Tags</a> &nbsp;
+						<a href="/posts/about"  >About</a> &nbsp;
+					</span>					
+                </div>			
+            </div>
+        </div>
+        <div class="container">
+            <% var flash = request.flash('info').pop(); if (flash) { %>
+                <div class="alert alert-info">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <%- flash %>
+                </div>
+            <% } %>
+
+            <% flash = request.flash('error').pop(); if (flash) { %>
+                <div class="alert alert-error">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <%- flash %>
+                </div>
+            <% }; %>
+
+            <%- body %>
+
+            <hr />
+            <footer>
+                <p>&copy; jie-w.com 2013</p>
+            </footer>
+        </div>
+    </body>
+</html>
+<%- contentFor('javascripts') %>
