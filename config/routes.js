@@ -5,7 +5,7 @@ exports.routes = function (map) {
 		map.post('search', '#search', {collection: true});
 		map.get('about', '#about', {collection: true});
 	});
-	map.root('posts#index');
+    map.root('posts#index');
     // Generic routes. Add all your routes below this line
     // feel free to remove generic routes
     //map.all(':controller/:action');

@@ -22,15 +22,15 @@
 */
 
 var Post = describe('Post', function () {
-    property('title', String);
+        property('title', String);
 	property('tags', String);
 	property('description', String);
 	property('datetime', Date, {default: Date});
 	property('pv', Number, {default:1});
 	property('content', String);
-    property('author', String);
+        property('author', String);
 	property('author_link', String);
-    set('restPath', pathTo.posts);
+        set('restPath', pathTo.posts);
 });
 
 var Answer = describe('Answer', function (){
@@ -38,7 +38,7 @@ var Answer = describe('Answer', function (){
 	property('question_title', String);
 	property('content', String);
 	property('answer_datetime', Date, {default: Date});
-    property('author', String);
+        property('author', String);
 	property('author_link', String);
 	set('restPath', pathTo.answers);
 });

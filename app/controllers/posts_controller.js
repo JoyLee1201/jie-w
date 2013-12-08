@@ -6,13 +6,12 @@ before(loadPost, {
 
 action('new', function () {
     this.title = 'New post';
-	this.query = {q: ''};
+    this.query = {q: ''};
     this.post = new Post;
     render();
 });
 
 action(function create() {
-	this.query = {q: ''};
     Post.create(req.body.Post, function (err, post) {
         respondTo(function (format) {
             format.json(function () {
@@ -23,6 +22,7 @@ action(function create() {
                 }
             });
             format.html(function () {
+                console.log(post);
                 if (err) {
                     flash('error', 'Post can not be created');
                     render('new', {
