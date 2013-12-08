@@ -12,6 +12,7 @@
 	<ul class="breadcrumb">
 		<li><%= post.content %></li>
 	</ul>
+	<p style="font-size:12px;"> 最新答案由<a href="<%= post.author_link %>" target="_blank"> <%= post.author %> </a> 编辑于 <%= post.datetime %></p>
 	<p> <%- link_to('Edit', pathTo.edit_post(post)) %>   <a href="/posts/history" >History</a> </p>
 <% } else { %>
 
