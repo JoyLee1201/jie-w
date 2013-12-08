@@ -1,12 +1,12 @@
 <%- errorMessagesFor(post) %>
 <div class="control-group">
    <div class="controls">
-       <%- form.input("title") %>
+       <%- form.input("title", {placeHolder:'请在此输入问题标题', style:'width:500px;'}) %>
    </div>
 </div>
 <div class="control-group">
    <div class="controls">
-        <%- form.input("tags") %>
+        <%- form.input("tags", {placeHolder:'你可以为上面的问题最多设置3个标签，以空格隔开', style:'width:500px;'}) %>
     </div>
 </div>
 

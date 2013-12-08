@@ -12,7 +12,7 @@
 	<ul class="breadcrumb">
 		<li><%= post.content %></li>
 	</ul>
-	<%- link_to('Edit Answer', pathTo.edit_post(post)) %>
+	<p> <%- link_to('Edit', pathTo.edit_post(post)) %>   <a href="/posts/history" >History</a> </p>
 <% } else { %>
 
 <% var form = formFor(post, {action: pathTo.post(post), method: 'PUT', id: "post-form", class: "breadcrumb"}) %>

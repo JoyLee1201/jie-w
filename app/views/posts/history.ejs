@@ -1,13 +1,12 @@
 <% 
 if (posts.length > 0) {
-	posts.forEach(function (post) {
-          var tags = post.tags.split(' '); 
+	posts.forEach(function (post) { 
 %>
 <ul class="breadcrumb">
     <li><strong> <%- link_to(post.title, pathTo.post(post)) %> </strong> </li>
 </ul>
 <ul class="breadcrumb2">
-    <li> <% if(tags.length > 0) { tags.forEach(function (tag) { %> <a href="#" > <%- tag %> </a> &nbsp; <% }); } %> </li>
+    <li> <a href="#">  tags </a>  </li>
 </ul>
 <% 
 });

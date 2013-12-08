@@ -82,8 +82,13 @@
 
 <div class="control-group">
    <div class="controls">
-       <%- form.input("author") %>
-	   <%- form.input("author_link") %>
-	   <%- form.input("title", {type:'hidden'}) %>
+       <%- form.input("author", {placeHolder:'请输入你的身份标识', style:'width:500px;', value:''}) %>
+   </div>
+</div>
+
+<div class="control-group">
+   <div class="controls">
+       <%- form.input("author_link", {placeHolder:'请为你的身份设置一个远程链接，非必须填写', style:'width:500px;', value:''}) %>
+       <%- form.input("title", {type:'hidden'}) %>
    </div>
 </div>

@@ -135,6 +135,22 @@ action(function destroy() {
     });
 });
 
+action('history', function history() {
+    this.title = 'Posts index';
+    this.query = {q: ''};
+    Post.all(function (err, posts) {
+        switch (params.format) {
+            case "json":
+                send({code: 200, data: posts});
+                break;
+            default:
+                render({
+                    posts: posts
+                });
+        }
+    });
+});
+
 action('search', function search() {
     this.title = 'Posts index';
 	this.query = {q: ''};
